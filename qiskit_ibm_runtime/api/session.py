@@ -57,7 +57,17 @@ def _get_client_header() -> str:
     except Exception:  # pylint: disable=broad-except
         pass
 
-    qiskit_pkgs = ["qiskit-terra", "qiskit-aer", "qiskit-ignis", "qiskit-aqua"]
+    qiskit_pkgs = [
+        "qiskit-terra",
+        "qiskit-aer",
+        "qiskit-ignis",  # TODO: remove this?
+        "qiskit-aqua",  # TODO: remove this?
+        "qiskit-experiments",
+        "qiskit-nature",
+        "qiskit-machine-learning",
+        "qiskit-optimization",
+        "qiskit-finance",
+    ]
     pkg_versions = {"qiskit-ibm-runtime": ibm_runtime_version}
     for pkg_name in qiskit_pkgs:
         try:
